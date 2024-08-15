@@ -911,11 +911,6 @@ span.text-red {
 
 
 
-.sticky {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
 
 .navbar--container {
   top: 4.225rem;
@@ -1326,6 +1321,9 @@ a:hover::after {
 
 
 @media only screen and (max-width: 610px) {
+
+
+
   .product-detail-container {
  margin-top: 0; 
  padding-top: 6rem;
@@ -1397,9 +1395,11 @@ a::after {
   width:165px;
 
 }
+ 
 }
 
 @media only screen and (min-width: 611px) {
+
   .navbar--title, .nav--open-icon, .navbar--icon{  
     display: none !important;
   }

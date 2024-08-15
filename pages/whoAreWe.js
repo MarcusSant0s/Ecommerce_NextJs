@@ -3,7 +3,7 @@ import React from 'react'
 const whoAreWe = () => {
   return (
     <div>
-      tEST
+      tESTa
     </div>
   )
 }

@@ -9,11 +9,12 @@ import { useRouter } from 'next/router'
 
 const ProductsHandle = ({ productsInfo }) => {
   const router = useRouter()
-  let { page, limit } = router.query;
+  var { page, limit } = router.query;
+  console.log();
 
-  const Products = chunk(productsInfo, limit)
   var QueryPage = Number(router.query.page);
-
+  let Products = chunk(productsInfo, limit); 
+ 
 
   const changePage = (direction) => {
     // Atualiza a URL para a próxima ou anterior página, mantendo o limite igual
@@ -31,20 +32,20 @@ const ProductsHandle = ({ productsInfo }) => {
       pathname: router.pathname,
       query: { ...router.query, limit: selectedValue.toString() },
     });
-
-
   }
 
+  
 
   return (
     <div className='products-section'>
       <div className='products-heading'>
-        <h2>Beset Selling Products</h2>
-        <p>Speakers of many variations</p>
+        <h2>Melhores Produtos do Mercado</h2>
+        <p> Seja você</p>
       </div>
 
       <div className='products-container'>
-        {Products[page]?.map((product) => <Product key={product._id} product={product} />)}
+        {router.query.categoryParam == "*" ? Products[page]?.map((product) => <Product key={product._id} product={product} />)  :Products[page]?.filter((product) => product.category == `${router.query.categoryParam}`).map((product) => <Product key={product._id} product={product} />) 
+         }
       </div>
 
 
@@ -78,10 +79,8 @@ const ProductsHandle = ({ productsInfo }) => {
 
 
           <li className="page-item ">
-            <select onChange={HandleLimit}>
-              <option value="10">10</option>
-              <option value="20">20</option>
-              <option value="30">30</option>
+            <select onChange={HandleLimit}> 
+              <option value="20">20</option> 
               <option value="50">50</option>
               <option value="100">100</option>
             </select>

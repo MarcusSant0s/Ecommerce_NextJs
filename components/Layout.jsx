@@ -4,12 +4,15 @@ import Navbar from './Navbar'
 import Footer from './Footer'
  
 const Layout = ({children}) => {
+  
   return (
     <div className='layout'>
-      <Head>
- <title> TEST ONE </title>
-      </Head>
-      <header className='sticky'>
+            <Head>
+            <title> BN Semijoias </title>
+            <meta name="description" content="Empreendimento de Joias" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            </Head>
+      <header>
         <Navbar></Navbar>
       </header>
       <main className='main-container'>

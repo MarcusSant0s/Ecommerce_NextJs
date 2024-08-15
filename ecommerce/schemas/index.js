@@ -2,6 +2,7 @@
 
 import product from './product';
 import banner from './banner';
-import categories from './categories';
+import category from './category';
+import subCategories from './subCategories';
  
-export const schemaTypes = [ product, banner, categories ];
+export const schemaTypes = [ product, banner, category, subCategories ];

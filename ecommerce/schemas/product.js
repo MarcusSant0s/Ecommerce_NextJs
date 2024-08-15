@@ -29,6 +29,11 @@ export default {
         }
       },
       { 
+        name: 'discont',
+        title: 'Discont',
+        type: 'number',
+      },
+      { 
         name: 'price',
         title: 'Price',
         type: 'number',
@@ -39,15 +44,21 @@ export default {
         type: 'string',
       },
       {
-        name: 'categories',
-        title: 'Categories',
-        type: 'array',
-        of: [{ type:'reference', to: { type: 'category' } }],
+        name: 'category',
+        title: 'Category',
+        type: 'reference',
+        to: [{type: 'category' }],
       },
       {
         name: 'Quantity',
         title: 'Quantity',
         type: 'number',
+      },
+    {
+        name: 'subCategories',
+        title: 'Sub Categories',
+        type: 'array',
+        of: [{ type:'reference', to: { type: 'subCategories' } }],
       }
     ],
    

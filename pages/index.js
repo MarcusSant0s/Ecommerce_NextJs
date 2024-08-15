@@ -13,7 +13,7 @@ const index = ({ products, bannerData }) => {
     if (!router.query.page) {
       router.push({
         pathname: '/',
-        query: { page: 0, limit: 10 }
+        query: { page: 0, limit: 20, categoryParam: '*' },
       });
     }
   }, [])
@@ -33,8 +33,11 @@ const index = ({ products, bannerData }) => {
 
 export const getServerSideProps = async () => {
 
-  const query = `*[_type == "product"] | order(createdAt desc)`;
-  const products = await client.fetch(query);
+      const query = `*[_type == "product" ]{
+      image, name, slug, discont, price, _id,
+      "category": category -> category
+    }`;
+    const products = await client.fetch(query);
 
 
   const bannerQuery = '*[_type == "banner"]';

@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import { AiOutlineShopping } from 'react-icons/ai';
 import Image from 'next/image';
+import { useRouter } from 'next/router'
 import Link from 'next/link';
 
 import { Cart } from './'
@@ -10,6 +11,7 @@ import logo from '../public/logo.svg'
 
 
 const Navbar = () => {
+  const router = useRouter()
   const { showCart, setShowCart, totalQuantities } = useStateContext();
 
 
@@ -61,10 +63,15 @@ const Navbar = () => {
 
 
 
-          <Link href="/" className="navbar-brand"> 
-            <div>
-            <Image src={logo} height={50} width={50} alt="some text" fill="true" />
-            </div>
+          <Link               
+            href={{
+                  pathname: '/',
+                  query: { page: 0, limit: 20, categoryParam: '*' },
+                }}
+            className="navbar-brand"> 
+                    <div>
+                    <Image src={logo} height={50} width={50} alt="some text" fill="true" />
+                    </div>
           </Link>
 
 
@@ -105,11 +112,53 @@ const Navbar = () => {
 
 
         <div className="nav--open-menu">
-          <a href=""><span>Quem somos?</span></a>
-          <a href=""><span>Brincos</span></a>
-          <a href=""><span>Colares</span></a>
-          <a href=""><span>Anél</span></a>
-          <a href=""><span>Fale Conosco</span></a>
+          <Link  
+                href="/whoAreWe"
+                >
+                  <span>Quem somos?</span>
+           </Link>
+
+           <Link  
+                href={{
+                  pathname: router.pathname,
+                  query: { ...router.query, 'categoryParam': 'Brinco' },
+                }}
+                >
+                  <span>Brincos</span>
+           </Link>
+
+
+           <Link  
+                href={{
+                  pathname: router.pathname,
+                  query: { ...router.query, 'categoryParam': 'Colar' },
+                }}
+                >
+                  <span>Colares</span>
+           </Link>
+
+
+
+           <Link  
+                href={{
+                  pathname: router.pathname,
+                  query: { ...router.query, 'categoryParam': 'Anel' },
+                }}
+                >
+                  <span>Anéis</span>
+           </Link>
+
+
+           <Link  
+                href={{
+                  pathname: router.pathname,
+                  query: { ...router.query, 'categoryParam': '*' },
+                }}
+                >
+                  <span>Todos</span>
+           </Link>
+
+ 
 
         </div>
       </div>
