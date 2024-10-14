@@ -1,7 +1,18 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Navbar from "../components/Navbar";
+import {StateContext} from '@/context/StageContext'
 
-const inter = Inter({ subsets: ["latin"] });
+
+
+
+import {  lora } from './font';
+
+ 
+ 
+ 
+
+
 
 export const metadata = {
   title: "Create Next App",
@@ -10,8 +21,14 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html className="w-screen" lang="en">
+      <body className={lora.className}>
+      <StateContext  >
+        <Navbar/>
+
+        {children}
+        </StateContext  >
+        </body>
     </html>
   );
 }
