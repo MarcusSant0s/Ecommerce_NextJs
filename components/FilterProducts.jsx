@@ -12,23 +12,23 @@ const FilterProducts = () => {
       
   return (
 
-    <div style={{ width: 'calc(100vw - 3vw)' }} className={`p-1  pb-1  border rounded-md border-dashed  border-gray-500 `}> {/* Header */} <div className="mb-6 py-4 flex flex-row justify-between border-b border-gray-200">
+    <div style={{ width: 'calc(100vw - 3vw)' }} className={`p-1  pb-1    lg:mt-10  `}> {/* Header */} <div className="mb-6 py-4 flex flex-row justify-between border-b border-gray-200">
           <button onClick={onHandlerShowFilter} className="flex items-center text-xl cursor-pointer gap-2" >
-           <span className='text-xl font-bold'> Filtros </span>
+           <span className='text-xl font-medium'> Filtros </span>
           <FaChevronDown className={`${
           (showFilter)
           ? `rotate-180`
           :``}`}/>
           </button> 
 
-          <button>Limpar filtros</button>
+          <button className='mr-2'>Limpar filtros</button>
         </div> 
         
   
         <div className={`${
           (showFilter)
           ? `hidden`
-          :``}`}> 
+          :``} pr-2`}> 
         {/* Search Filter */} <div className={ `flex w-full mb-6 md:mb-10 md:px-6 px-2 items-center border bg-white border-gray-400 rounded-md `}>
           <div className="mr-1 md:mr-2">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">

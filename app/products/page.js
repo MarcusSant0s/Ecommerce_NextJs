@@ -27,7 +27,7 @@ export default async function page (){
         <FilterProducts/>
  
  {/* Product List */}
-      <div style={{ width: 'calc(100vw - 3vw)' }} className="grid max-[380px]:grid-cols-1 rows--height grid-cols-2 sm:grid-cols-3 md:grid-cols-4 md:p-2 md:gap-2  min-h-screen   border rounded-md border-dashed w-full h-full pt-2">
+      <div style={{ width: 'calc(100vw - 3vw)' }} className="grid max-[380px]:grid-cols-1 rows--height grid-cols-2 sm:grid-cols-3 md:grid-cols-4 md:p-2 md:gap-2  min-h-screen   border rounded-md border-dashed w-full h-full pt-2 gap-y-4">
      
       {products.map((productsData) => (
         <Product key={productsData._id} product={productsData} />

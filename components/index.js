@@ -7,3 +7,4 @@ export { default as Product} from "./Product";
 export { default as Cart} from "./Cart";
 export {default as ProductDetailsComponent} from "./ProductDetailsComponent";
 export {default as FilterProducts} from "./FilterProducts";
+export {default as SquareFading} from "./SquareFading";

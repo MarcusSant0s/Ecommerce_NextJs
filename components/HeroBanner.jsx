@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link';
+import {SquareFading} from './';
  
 
 
@@ -14,7 +15,7 @@ const HeroBanner = () => {
 
  
 <div className="max-sm:h-full md:relative md:inline-block md:my-auto">
-  <span className=" max-sm:hidden md:absolute top-0 left-0 md:left-2 md:top-2 w-full h-full bg-red-400 z-0"></span>
+  <span className=" max-sm:hidden md:absolute top-0 right-0 md:right-2 md:top-2 w-full h-full bg-red-400 z-0"></span>
   <Image
     src={bannerImage2}
     alt="banner-img"
