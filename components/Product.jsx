@@ -7,7 +7,7 @@ import Image from 'next/image';
 const Product = ({ product: { name, slug, price, category, image } }) => {
 
   return (
-    <div className='group mx-1 p-2 max-h-96   bg-gray-100 border hover:border-black rounded-lg shadow-md drop-shadow-md'>
+    <div className='group mx-1 p-2 max-h-96   bg-white border hover:border-black rounded-lg shadow-md drop-shadow-md'>
       <Link href={`products/${slug.current}`}>
         <div className='h-3/4  relative'>
 

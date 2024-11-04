@@ -13,7 +13,7 @@ const ProductDetails = async ({params}) =>  {
   
  
     let product = await client.fetch(query); 
-    console.log('\n \n products: ' + product + '\n \n')
+    
 
   return  (
   <ProductDetailsComponent product={product} />

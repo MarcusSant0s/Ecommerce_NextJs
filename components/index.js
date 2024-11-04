@@ -8,3 +8,6 @@ export { default as Cart} from "./Cart";
 export {default as ProductDetailsComponent} from "./ProductDetailsComponent";
 export {default as FilterProducts} from "./FilterProducts";
 export {default as SquareFading} from "./SquareFading";
+export {default as ProductInfo} from "./ProductInfo";
+export {default as ProductsList} from "./ProductsList";
+export {default as Pagination} from "./Pagination";

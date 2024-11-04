@@ -14,15 +14,15 @@ const HeroBanner = () => {
    <header className='w-screen max-w-7xl h-screen  relative md:grid md:grid-cols-2 md:mt-16 '>
 
  
-<div className="max-sm:h-full md:relative md:inline-block md:my-auto">
-  <span className=" max-sm:hidden md:absolute top-0 right-0 md:right-2 md:top-2 w-full h-full bg-red-400 z-0"></span>
-  <Image
-    src={bannerImage2}
-    alt="banner-img"
-    priority
-    className='relative md:z-10 h-full object-cover md:h-4/5'
-  />
-</div>
+  <div className="max-sm:h-full md:relative md:inline-block md:my-auto">
+    <span className=" max-sm:hidden md:absolute top-0 right-0 md:right-2 md:top-2 w-full h-full bg-red-400 z-0"></span>
+    <Image
+      src={bannerImage2}
+      alt="banner-img"
+      priority
+      className='relative md:z-10 h-full object-cover md:h-4/5'
+    />
+  </div>
             
 
  

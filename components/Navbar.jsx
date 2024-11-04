@@ -4,6 +4,7 @@
 import { Cart } from './';
 import { FaShoppingCart } from "react-icons/fa";
 import Icon from './Icon';
+ 
 import Link from 'next/link';
 import { useStateContext } from '@/context/StageContext';
 import React, { useState } from 'react'
@@ -13,13 +14,14 @@ import { playfair_display } from '@/app/font';
 
 const Navbar = () => {
 
+
   const [navBarMenuActive, setNavBarMenuActive] = useState(true);
 
   const onHandlerNavbarMenuActivation = () => {
     setNavBarMenuActive(!navBarMenuActive);
   }
 
-  const [navBarMobileActive, setNavBarMobileActive] = useState(false);
+  const [navBarMobileActive, setNavBarMobileActive] = useState(true);
 
   const onHandlerNavbarMobileActivation = () => {
     setNavBarMobileActive(!navBarMobileActive);
@@ -47,12 +49,12 @@ const Navbar = () => {
         <div className={`${(navBarMobileActive)
           ? `hidden`
           : `flex`
-          } pl-2  mt-14 flex flex-col space-y-8 lg:mt-0 lg:flex-row lg:space-x-1 lg:space-y-0  `}>
+          } pl-2 h-screen mt-14 flex flex-col space-y-8 lg:mt-0 lg:flex-row lg:space-x-1 lg:space-y-0  `}>
           <div className={`relative flex max-lg:flex-col max-lg:justtify-center max-lg:gap-3 max-lg:text-left`}>
 
-            <Link legacyBehavior
+            <Link className="  rounded-lg lg:px-6 lg:py-4 font-extrabold lg:bg-white lg:bg-opacity-50 lg:hover:text-gray-800 text-xl uppercase relative  w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-16 after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left"
               href="/products">
-              <a className="  rounded-lg lg:px-6 lg:py-4 font-extrabold lg:bg-white lg:bg-opacity-50 lg:hover:text-gray-800 text-xl uppercase relative  w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-16 after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left"> <h1 className={playfair_display.className}> Peças </h1></a>
+                <h1 className={playfair_display.className}> Peças </h1>
             </Link>
 
             <a href="#" className="text-xl lg:rounded-lg  lg:px-6 lg:py-4  font-extrabold  lg:hover:text-gray-800 lg:bg-white lg:bg-opacity-50 uppercase relative  w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-28 after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"> Garantia </a>

@@ -1,19 +1,30 @@
+ 
 import React from 'react'
-import { FilterProducts, Product } from '@/components'
+
+
+import { FilterProducts, ProductsList} from '@/components'
 import { client } from '@/lib/client'
-import Image from 'next/image'
+
+ 
+ 
+export default async function page ({params}){
  
 
-export default async function page (){
-
-  const query = `*[_type == "product" ]{
+  const query =  `*[_type == "product" ]| order(_createdAt desc){
     image, name, slug, discont, price, _id,
     "category": category -> category
-  }`;
-     
- 
+  }[0..50]`;
 
   let products = await client.fetch(query)
+  // const headersList = await headers()
+  // const limit = headersList.get('limit')
+  // const page = headersList.get('page')
+
+ 
+
+  // const productsInfo = chunk(products, limit)
+  // const productPerPage =  productsInfo[page  ]
+  // console.log(params)
  
   return(  
   
@@ -22,23 +33,16 @@ export default async function page (){
         <div className="mx-0 ">  
          <div className="flex  "> 
            <div className={`w-full ps-4  rounded-md flex items-center justify-center bg-gray-100`}>
-        <div className={`flex flex-col w-full  `}  >
-           {/* Sidebar Filters */} 
-        <FilterProducts/>
- 
- {/* Product List */}
-      <div style={{ width: 'calc(100vw - 3vw)' }} className="grid max-[380px]:grid-cols-1 rows--height grid-cols-2 sm:grid-cols-3 md:grid-cols-4 md:p-2 md:gap-2  min-h-screen   border rounded-md border-dashed w-full h-full pt-2 gap-y-4">
-     
-      {products.map((productsData) => (
-        <Product key={productsData._id} product={productsData} />
+                <div className={`flex flex-col w-full  `}  >
+                  {/* Sidebar Filters */} 
+                <FilterProducts/> 
         
+                {/* Product List */}
 
-      ))}
-  
-      </div>
+                <ProductsList query={query} products={products} />
  
-          
-        </div>
+                
+                </div>
       </div>
     </div>
   </div>
