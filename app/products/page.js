@@ -1,9 +1,8 @@
  
-import React from 'react'
 
 
-import { FilterProducts, ProductsList} from '@/components'
-import { client } from '@/lib/client'
+import { FilterProducts, ProductsList} from '@/components';
+import { client } from '@/lib/client';
 
  
  
@@ -28,27 +27,20 @@ export default async function page ({params}){
  
   return(  
   
-  <div className="mt-20">
-      {/* Container */} 
+  <div className="mt-20"> 
         <div className="mx-0 ">  
          <div className="flex  "> 
            <div className={`w-full ps-4  rounded-md flex items-center justify-center bg-gray-100`}>
-                <div className={`flex flex-col w-full  `}  >
+                <div className='flex flex-col w-full'>
                   {/* Sidebar Filters */} 
-                <FilterProducts/> 
-        
-                {/* Product List */}
-
-                <ProductsList query={query} products={products} />
- 
-                
+                  <FilterProducts/>  
+                  {/* Product List */} 
+                  <ProductsList query={query} products={products} /> 
                 </div>
       </div>
     </div>
   </div>
-
-       
-    </div>
+</div>
  
  
   )

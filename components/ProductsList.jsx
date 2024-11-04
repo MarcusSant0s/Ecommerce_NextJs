@@ -1,32 +1,28 @@
 'use client'
-import { useEffect, useState, use } from 'react'; 
+import { useEffect, useState} from 'react'; 
  import { Product } from '@/components' 
- import { client } from '@/lib/client'
- import chunk from 'chunk';
-import { P } from '@/ecommerce/dist/static/sanity-c7ddbbbf';
-  
-const ProductsList = ({products, query}) => {
-
  
+  
+const ProductsList = ({products}) => {
 
+  
+//   const [newProducts, setNewProducts] = useState([])
+//   const [isFetchingNewProducts, setIsFetchingNewProducts] = useState(false)
+//   const [quantityProducts, setQuantityProducts] = useState(30)
 
-  const [newProducts, setNewProducts] = useState([])
-  const [isFetchingNewProducts, setIsFetchingNewProducts] = useState(false)
-  const [quantityProducts, setQuantityProducts] = useState(30)
-
-  useEffect(() => {
-    console.log('true');
+//   useEffect(() => {
+//     console.log('true');
      
          
-    async function fetchNewProducts() {
-      let res = await client.fetch(query)
-      setNewProducts([...newProducts, res]);
-      console.log(newProducts)
-    }
+//     async function fetchNewProducts() {
+//       let res = await client.fetch(query)
+//       setNewProducts([...newProducts, res]);
+//       console.log(newProducts)
+//     }
 
-    fetchNewProducts()
+//     fetchNewProducts()
 
-}, [isFetchingNewProducts]);
+// }, [isFetchingNewProducts]);
 
 
 
@@ -50,10 +46,10 @@ const ProductsList = ({products, query}) => {
 //  }, [router]);
 
 
- function handleIsFetchingNewProducts(){ 
-  setIsFetchingNewProducts(!isFetchingNewProducts)
+//  function handleIsFetchingNewProducts(){ 
+//   setIsFetchingNewProducts(!isFetchingNewProducts)
 
- }
+//  }
 
 
   return (
@@ -69,18 +65,10 @@ const ProductsList = ({products, query}) => {
       )}
 
  
-{/* { newProducts.length > 0 ?(
-  newProducts.map(() =>{
-    <p>dome</p>
-  })
-
-): (
-<p>notdome</p>
-)} */}
 
 
-
-        <button onClick={handleIsFetchingNewProducts} className="col-span-full flex justify-center ">
+        {/* onClick={handleIsFetchingNewProducts}  */}
+        <button className="col-span-full flex justify-center ">
           <div className="border border-red-500 bg-red-400 text-white   rounded-sm font-bold py-4 px-6  flex items-center">
           Next page
           </div>
