@@ -6,7 +6,12 @@ export { default as Features} from "./Features";
 export { default as Product} from "./Product"; 
 export { default as Cart} from "./Cart";
 export {default as ProductDetailsComponent} from "./ProductDetailsComponent";
+<<<<<<< HEAD
 export {default as FilterProducts} from "./FilterProducts"; 
+=======
+export {default as FilterProducts} from "./FilterProducts";
+export {default as SquareFading} from "./SquareFading";
+>>>>>>> fc5776b (AddPaginationInfit)
 export {default as ProductInfo} from "./ProductInfo";
 export {default as ProductsList} from "./ProductsList";
 export {default as Pagination} from "./Pagination";
