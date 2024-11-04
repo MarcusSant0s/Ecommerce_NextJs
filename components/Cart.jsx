@@ -75,9 +75,7 @@ const Cart = () => {
             <div className='product' key={item._id}>
               <Image src={urlFor(item?.image[0]).url()}
                 alt="image-cart"
-                className='cart-product-image'
-                width={100}
-                height={100}
+                className='cart-product-image' 
               />
               <div className='item-desc'>
                 <div className="flex top">

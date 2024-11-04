@@ -1,7 +1,7 @@
 import React from 'react'
 import { FilterProducts, Product } from '@/components'
 import { client } from '@/lib/client'
-import Image from 'next/image'
+ 
  
 
 export default async function page (){
