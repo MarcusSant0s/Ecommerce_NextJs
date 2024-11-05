@@ -12,7 +12,7 @@ import { urlFor } from '@/lib/client';
 
 const ProductDetailsComponent = ({ product}) => {
 
-  const { image, name, details, price } = product;
+  const { image, name, details, price } = product ?? {};
 
   const [index, setIndex] = useState(0);
   const { decQty, incQty, qty, onAdd, setShowCart } = useStateContext();
