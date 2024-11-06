@@ -32,8 +32,7 @@ const Navbar = () => {
 
 
 
-  return (
-
+  return ( 
     <nav className={`${(navBarMobileActive)
       ? `bg-transparent`
       : `bg-white backdrop-blur`}
