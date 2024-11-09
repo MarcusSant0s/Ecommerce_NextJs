@@ -44,7 +44,7 @@ const FilterProducts = () => {
           </div>
           <input type="text" placeholder="Search" className="py-2 w-full text-sm md:text-base rounded-md focus:outline-none placeholder" />
         </div> {/* Categories Filter */} <div className="pb-3 md:pb-6 border-b border-gray-100 mb-3 md:mb-6">
-          <p className="font-bold mb-6">Categories</p>
+          <p className="font-bold mb-6">Categoria</p>
           <div className="flex flex-wrap gap-2">
             {/* <Link  className="p-2 gap-1 md:gap-3 text-sm md:text-base flex items-center rounded-md bg-white font-bold">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -75,7 +75,6 @@ const FilterProducts = () => {
         </div> {/* Filter One */} <div className="pb-3 md:pb-6 border-b border-gray-100 mb-3 md:mb-6">
           <div className="flex justify-between items-center mb-6">
             <p className="font-bold">Filter One</p>
-            <button>Clear</button>
           </div>
           <div className="flex flex-col sm:flex-row justify-between ">
             <label className="flex items-center">

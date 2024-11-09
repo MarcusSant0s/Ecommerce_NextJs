@@ -3,7 +3,7 @@ import React, {useState} from 'react'
 
 
 
-const ProductInfo = () => {
+const ProductInfo = ({details}) => {
 
 
     // Using useState to keep track of the open FAQ item
@@ -18,8 +18,7 @@ const ProductInfo = () => {
     },
     {
       question: "Descrição",
-      answer:
-        "Saepe reprehenderit facere magni vel autem voluptas deserunt. Sit ut minus consequatur blanditiis facilis quam. Esse reiciendis odio. Aut labore quaerat est repellat molestiae. Ut deleniti sed illum facere officia fugit illo. Totam eaque quae nihil quo.",
+      answer:details
     },
     {
       question: "Material",

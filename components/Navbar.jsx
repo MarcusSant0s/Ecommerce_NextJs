@@ -33,9 +33,7 @@ const Navbar = () => {
 
 
   return ( 
-    <nav className={`${(navBarMobileActive)
-      ? `bg-transparent`
-      : `bg-white backdrop-blur`}
+    <nav className={` bg-transparent 
    h-auto w-screen  fixed left-0 top-0 z-30`}>
 
       <div className="flex  justify-between py-2 sm:py-6 lg:flex-row lg:items-center lg:justify-between lg:px-10 lg:py-4  ">
@@ -75,7 +73,7 @@ const Navbar = () => {
         </div>
         <div className={`max-lg:hidden flex-col space-y-4 lg:flex lg:flex-row lg:space-x-3 lg:space-y-0`}>
           <button onClick={() => setShowCart(!showCart)} type='button'
-            className='text-3xl rounded-lg bg-white px-8 py-4  flex justify-center text-pink-400 hover:text-white hover:bg-pink-400 transition-colors ease-in delay-300  border border-red-400'>
+            className='text-3xl rounded-lg bg-white px-8 py-4  flex justify-center text-pink-800 hover:text-white  transition-colors ease-in delay-300  border border-black'>
             <div className="relative">
               <FaShoppingCart />
               <span className="absolute -top-2 -right-2 text-base bg-red-200 text-white rounded-full w-5 h-5 flex items-center justify-center">
@@ -89,7 +87,7 @@ const Navbar = () => {
         <div className=' flex items-center justify-between  lg:hidden h-12 w-14 gap-2   mr-7'>
 
           <button onClick={() => setShowCart(!showCart)} type='button'
-            className=' text-2xl rounded-2xl bg-white p-2  flex justify-center text-pink-400 hover:text-white hover:bg-pink-400 transition-colors ease-in delay-100  border-0 '>
+            className=' text-2xl rounded-2xl bg-white p-2  flex justify-center text-pink-600 hover:text-white hover:bg-pink-600 transition-colors ease-in delay-100  border-0 '>
             <div className="relative">
               <FaShoppingCart />
               <span className="absolute -top-2 -right-2 text-base bg-white text-black rounded-full w-5 h-5 flex items-center justify-center">
@@ -100,9 +98,9 @@ const Navbar = () => {
 
           <button onClick={onHandlerNavbarMobileActivation} className="text-2xl rounded-md bg-white py-1 ">
             <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg ">
-              <path d="M3.75 12H20.25" stroke="#f472b6" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"></path>
-              <path d="M3.75 6H20.25" stroke="#f472b6" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"></path>
-              <path d="M3.75 18H20.25" stroke="#f472b6" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"></path>
+              <path d="M3.75 12H20.25" stroke="#db2777 " strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"></path>
+              <path d="M3.75 6H20.25" stroke="#db2777 " strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"></path>
+              <path d="M3.75 18H20.25" stroke="#db2777" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"></path>
             </svg>
           </button>
         </div>

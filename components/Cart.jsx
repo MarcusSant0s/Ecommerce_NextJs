@@ -8,7 +8,7 @@ import { urlFor } from '../lib/client';
 import getStripe from '../lib/getStripe';
 
 
-import { AiOutlineMinus, AiOutlinePlus, AiOutlineLeft, AiOutlineShopping } from 'react-icons/ai';
+import { AiOutlineMinus, AiOutlinePlus, AiOutlineLeft, AiOutlineRight, AiOutlineShopping } from 'react-icons/ai';
 import { TiDeleteOutline } from 'react-icons/ti'
 
 
@@ -43,26 +43,26 @@ const Cart = () => {
   }
 
   return (
-    <div className='cart-wrapper' ref={cartRef} >
+    <div className=' absolute top-0 z-50 w-svw bg-white h-screen flex flex-col' ref={cartRef} >
       <div className='cart-container'>
-        <button type='button' className='cart-heading'
+        <button type='button' className='flex mt-5 mb-5 '
           onClick={() => setShowCart(false)}>
-          <AiOutlineLeft />
-          <span className='heading'>Your Cart</span>
-          <span className='cart-num-items'>({totalQuantities} items)</span>
+          <AiOutlineLeft className='text-4xl ml-5'/>
+          <span className='self-center text-lg'>Seu carrinho</span>
+          <span className='self-center ml-1  text-md'>({totalQuantities} items)</span>
         </button>
 
         {cartItems.length < 1 && (
-          <div className='empty-cart'>
-            <AiOutlineShopping size={150} />
+          <div className='flex flex-col  mt-10'>
+            <AiOutlineShopping size={150}  className='mx-auto'/>
 
-            <h3> Your shopping bag is empty  </h3>
-            <Link href='/'>
+            <h3 className='mx-auto'> Seu carrinho está vazio  </h3>
+            <Link href='/' className='mx-auto'>
               <button
                 type='button'
                 onClick={() => setShowCart(false)}
-                className='btn'>
-                Continue Shopping
+                className='justify-self-center bg-red-400'>
+                Continue descobrindo
               </button>
 
             </Link>
@@ -72,40 +72,40 @@ const Cart = () => {
 
         <div className='product-container'>
           {cartItems.length >= 1 && cartItems.map((item, index) => (
-            <div className='product' key={item._id}>
+            <div className='flex p-2' key={item._id}>
               <Image src={urlFor(item?.image[0]).url()}
                 alt="image-cart"
                 className='cart-product-image'
                 width={100}
                 height={100}
               />
-              <div className='item-desc'>
+              <div className='w-full flex flex-col justify-between'>
                 <div className="flex top">
                   <h5>{item.name}</h5>
                   <h5>{item.price}</h5>
                 </div>
-                <div className="flex bottom">
-                  <div >
-                    <p className='quantity-desc'>
-                      <span className='minus'
+                <div className="flex justify-between">
+                  <div className=' border  gap-2  rounded-lg p-0.5' >
+                    <p className='flex items-center gap-2'>
+                      <span className=' rounded-s-md'
                         onClick={() => toggleCartItemsQuantity(item._id, 'dec')}>
-                        <AiOutlineMinus />
+                        <AiOutlineLeft />
                       </span>
-                      <span className='num'
+                      <span className=''
                       >
                         {item.quantity}
                       </span>
-                      <span className='plus'
+                      <span className=' rounded-e-md'
                         onClick={() => toggleCartItemsQuantity(item._id, 'inc')}>
-                        <AiOutlinePlus />
+                        <AiOutlineRight />
                       </span>
                     </p>
                   </div>
                   <button
                     type='button'
-                    className='remove-item'
+                    className='mr-10'
                     onClick={() => onRemove(item)}>
-                    <TiDeleteOutline />
+                    <TiDeleteOutline  className='text-xl'/>
                   </button>
 
                 </div>
@@ -115,7 +115,7 @@ const Cart = () => {
           ))}
         </div>
         {cartItems.length >= 1 && (
-          <div className="cart-bottom">
+          <div className="ml-5">
             <div className="total">
               <h3>Subtotal:</h3>
               <h3>R${totalPrice}</h3>
@@ -123,7 +123,7 @@ const Cart = () => {
             </div>
             <div className="btn-container">
               <button type='button'
-                className='btn'
+                className='w-full bg-red-500 max-w-64 py-1 text-2xl font-semibold33                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       '
                 onClick={handleCheckout}>
                 Pay With Stripe
 

@@ -6,21 +6,29 @@ import {SquareFading} from './';
 
 
 import bannerImage2 from '../public/bannerTwo.jpg';
+import test1 from '../public/bannerTwo-removebg.png';
 
+import test2 from '../public/bannerTwo-removebg-preview.png';
 
 const HeroBanner = () => {
   return (
 
-   <header className='w-screen max-w-7xl h-screen  relative md:grid md:grid-cols-2 md:mt-16 '>
+   <header className='w-screen   h-screen  relative   '>
 
  
-  <div className="max-sm:h-full md:relative md:inline-block md:my-auto">
-    <span className=" max-sm:hidden md:absolute top-0 right-0 md:right-2 md:top-2 w-full h-full bg-red-400 z-0"></span>
+  <div className=" absolute top-0 left-0  overflow-y-hidden  backdrop-blur-md max-sm:h-full md:w-screen h-screen  bg-red-300/40">
     <Image
       src={bannerImage2}
       alt="banner-img"
       priority
-      className='relative md:z-10 h-full object-cover md:h-4/5'
+      className='relative   h-full object-cover md:hidden'
+    />
+
+<Image
+      src={test1}
+      alt="banner-img"
+      priority
+      className='max-md:hidden object-cover z-30 max-w-3xl '
     />
   </div>
             
@@ -29,8 +37,9 @@ const HeroBanner = () => {
 
 
 
-      <div className=" w-10/12  absolute md:relative max-md:top-1/2 max-md:left-1/2 max-md:transform max-md:-translate-x-1/2   flex flex-col   md:mx-auto justify-around md:justify-center md:h-full   ">
-        <p className='md:-mt-20 w-full py-5 text-white  font-bold  mx-auto flex flex-col text-center text-balance backdrop-blur-sm animated-background bg-gradient-to-br delay-300  from-pink-600 via-pink-400 to-pink-200 border-4 border-white md:rounded-md '>
+
+      <div className=" w-10/12  absolute md:relative top-1/2 max-md:left-1/2 md:left-2/4 md:w-max md:px-2 md:max-w-md max-md:transform max-md:-translate-x-1/2    ">
+        <p className='md:-mt-20 w-full py-5 text-white  font-bold  mx-auto flex flex-col text-center text-balance backdrop-blur-3xl    border bg-gray-600/10 border-white md:rounded-m '>
           <span className='text-5xl font-sans'>Mulheres que Brilham</span>  
          <span className='text-3xl ml-2 mb-3 md:mb-0'> Sonhos que se realizam</span>
 
@@ -38,7 +47,7 @@ const HeroBanner = () => {
 
         </p>
 
-        <Link href='/products' className="max-md:mt-10 md:mx-auto relative inline-block text-white md:text-pink-400   md:w-max font-semibold py-2 px-4 rounded-lg border border-white md:border-pink-400 overflow-hidden group">
+        <Link href='/products' className="max-md:mt-10 md:mx-auto relative inline-block text-white md:text-pink-400 text-center  md:w-max font-semibold py-2 px-4 rounded-lg border border-white md:border-pink-400 overflow-hidden group">
               <span className="absolute inset-0 bg-pink-400  md:bg-white transform -translate-x-full transition-transform duration-500 ease-in-out group-hover:translate-x-0"></span>
               <span className="relative z-10 ">Confira nossas peças</span>
         </Link>
@@ -46,6 +55,8 @@ const HeroBanner = () => {
 
  
       </div>
+
+  
 
 
 

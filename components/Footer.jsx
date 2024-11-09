@@ -18,15 +18,16 @@ const Footer = () => {
       </div>
       <div className="mb-8 mt-8 border-b border-gray-300 w-48"></div>
       <div className="mb-12 grid-cols-3 grid-flow-col grid w-full max-w-52 gap-3">
-        <a href="#" className="mx-auto flex-col flex max-w-6 items-center justify-center text-black">
-        <IoLogoWhatsapp className='text-xl hover:text-green-400 ' />
+        <a href="#" className="mx-auto flex-col flex max-w-10 items-center justify-center text-black">
+        <IoLogoWhatsapp className='text-3xl hover:text-green-400 ' />
         </a>
-        <a href="#" className="mx-auto flex-col flex max-w-6 items-center justify-center text-black">
-        <IoLogoFacebook className='text-xl hover:text-blue-800 '/>  
+        <a href="#" className="mx-auto flex-col flex max-w-10 items-center justify-center text-black">
+        <IoLogoInstagram className='text-3xl hover:text-pink-500 '/>  
         </a>
-        <a href="#" className="mx-auto flex-col flex max-w-6 items-center justify-center text-black">
-        <IoLogoInstagram className='text-xl hover:text-pink-500 '/>  
+        <a href="#" className="mx-auto flex-col flex max-w-10 items-center justify-center text-black">
+        <IoLogoFacebook className='text-3xl hover:text-blue-800 '/>  
         </a>
+
  
       </div>
       <p className="text-sm sm:text-base"> © Copyright 2024. All rights reserved. </p>

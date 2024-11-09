@@ -58,7 +58,7 @@ const ProductDetailsComponent = ({ product}) => {
         <div className=' border-b-2 border-gray-200'>
           <h4 className='font-semibold'>Detalhes</h4>
           <p className='text-xl '>{name}</p>
-          <p className=' line-clamp-3 '>{details}</p>
+          
         </div>
 
 
@@ -72,7 +72,7 @@ const ProductDetailsComponent = ({ product}) => {
    
           </div>
 
-          <ProductInfo/>
+          <ProductInfo details={details}/>
       
       </div>
 
