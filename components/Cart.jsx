@@ -43,7 +43,9 @@ const Cart = () => {
   }
 
   return (
-    <div className=' absolute top-0 z-50 w-svw bg-white h-screen flex flex-col' ref={cartRef} >
+    <div className='h-full w-full flex md:justify-end'>
+
+    <div className='w-full bg-white   flex flex-col md:flex-end md:w-3/4' ref={cartRef} >
       <div className='cart-container'>
         <button type='button' className='flex mt-5 mb-5 '
           onClick={() => setShowCart(false)}>
@@ -78,7 +80,7 @@ const Cart = () => {
                 className='cart-product-image'
                 width={100}
                 height={100}
-              />
+                />
               <div className='w-full flex flex-col justify-between'>
                 <div className="flex top">
                   <h5>{item.name}</h5>
@@ -134,6 +136,7 @@ const Cart = () => {
 
       </div>
     </div>
+  </div>
   )
 }
 
