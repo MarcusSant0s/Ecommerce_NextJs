@@ -1,22 +1,19 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link';
-import {SquareFading} from './';
  
 
 
 import bannerImage2 from '../public/bannerTwo.jpg';
 import test1 from '../public/bannerTwo-removebg.png';
-
-import test2 from '../public/bannerTwo-removebg-preview.png';
-
+ 
 const HeroBanner = () => {
   return (
 
    <header className='w-screen   h-screen  relative   '>
 
  
-  <div className=" absolute top-0 left-0  overflow-y-hidden  backdrop-blur-md max-sm:h-full md:w-screen h-screen  bg-red-300/40">
+  <div className=" absolute top-0 md:top-20 left-0  overflow-y-hidden  backdrop-blur-md max-sm:h-full md:w-screen h-screen  bg-gradient-to-b from-pink-400/60 via-red-300/40 to-white ">
     <Image
       src={bannerImage2}
       alt="banner-img"
@@ -39,7 +36,7 @@ const HeroBanner = () => {
 
 
       <div className=" w-10/12  absolute md:relative top-1/2 max-md:left-1/2 md:left-2/4 md:w-max md:px-2 md:max-w-md max-md:transform max-md:-translate-x-1/2    ">
-        <p className='md:-mt-20 w-full py-5 text-white  font-bold  mx-auto flex flex-col text-center text-balance backdrop-blur-3xl    border bg-gray-600/10 border-white md:rounded-m '>
+        <p className='md:-mt-20 w-full py-5 text-white  font-bold  mx-auto flex flex-col text-center text-balance backdrop-blur-3xl    border bg-gray-600/10 border-white md:rounded-m md:text-pink-700 md:border-pink-700'>
           <span className='text-5xl font-sans'>Mulheres que Brilham</span>  
          <span className='text-3xl ml-2 mb-3 md:mb-0'> Sonhos que se realizam</span>
 
@@ -49,7 +46,7 @@ const HeroBanner = () => {
 
         <Link href='/products' className="max-md:mt-10 md:mx-auto relative inline-block text-white md:text-pink-400 text-center  md:w-max font-semibold py-2 px-4 rounded-lg border border-white md:border-pink-400 overflow-hidden group">
               <span className="absolute inset-0 bg-pink-400  md:bg-white transform -translate-x-full transition-transform duration-500 ease-in-out group-hover:translate-x-0"></span>
-              <span className="relative z-10 ">Confira nossas peças</span>
+              <span className="relative z-10 md:text-xl font-bold ">Confira nossas peças</span>
         </Link>
 
 

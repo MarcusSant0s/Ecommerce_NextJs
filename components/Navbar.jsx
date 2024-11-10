@@ -33,7 +33,7 @@ const Navbar = () => {
   return (
     <nav className='bg-transparent h-max w-screen  fixed left-0 top-0 z-30 flex flex-col md:bg-white' >
 
-      <div className='flex justify-between'>
+      <div className='flex justify-between md:pb-7'>
         <Link href="/" className='flex h-max items-center justify-center gap-2'>
           <Icon className="ml-1 mt-1 h-12 w-12   rounded-xl" />
           <h1 className={playfair_display.className}><span className='max-md:hidden text-3xl uppercase font-extrabold tracking-wide text-nowrap text-black/70   '
@@ -53,7 +53,7 @@ const Navbar = () => {
                 {totalQuantities}
               </span>
             </div>
-          </button>
+          </button> 
 
           <button onClick={onHandlerNavbarMenuActivation} className="text-2xl rounded-md bg-white py-1 md:hidden ">
             <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg ">
@@ -69,12 +69,12 @@ const Navbar = () => {
       </div>
 
       {/** Category List */}
-      <div className={`${isNavBarMenuActive ? `max-sm:absolute` : ` hidden`} w-screen h-screen absolute bg-gray-400/45 md:inline-block md:h-max md:mt-10`} onClick={onHandlerNavbarMenuActivation}>
-        <div className=' z-40 w-4/5 h-screen bg-white text-pink-700 flex flex-col  font-light   p-4 md:h-max md:w-full md:p-0 '>
+      <div className={`${isNavBarMenuActive ? `max-sm:absolute` : ` hidden`} w-screen h-screen absolute bg-gray-400/45 md:inline-block md:h-max md:mt-12 `} onClick={onHandlerNavbarMenuActivation}>
+        <div className=' z-40 w-4/5 h-screen bg-white  text-pink-700 flex flex-col  font-light   p-4 md:h-max md:w-full md:p-0 md:border-t-8 border-t-red-400 md:py-2'>
 
           <h2 className='text-xl border-b   border-b-red-400 w-max md:hidden'>Explore</h2>
 
-          <div className='mt-8 h-96 text-pink-700 flex flex-col font-semibold text-2xl divide-y space-y-5  md:flex-row md:divide-y-0 md:space-y-0 md:h-max md:mt-0 md:mx-auto md:text-xl  '>
+          <div className='mt-8 h-96 text-pink-700 md:text-black flex flex-col font-semibold text-2xl divide-y space-y-5  md:flex-row md:divide-y-0 md:space-y-0 md:h-max md:mt-0 md:mx-auto md:text-xl  '>
             
               <Link className='  mt-4  px-2 py-1  md:mt-1 ' href={'#'}>
                 
