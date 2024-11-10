@@ -43,7 +43,7 @@ const ProductDetailsComponent = ({ product}) => {
               src={urlFor(item).url()}
               width={400}
               height={400}
-              className={`cursor-pointer rounded-3xl  ${i === index ? 'bg-pink-300 ' : 'bg-transparent'
+              className={`cursor-pointer rounded-3xl  ${i === index ? 'bg-pink-600 ' : 'bg-transparent'
                 }`}
               onMouseEnter={() => setIndex(i)}
             />
@@ -52,7 +52,7 @@ const ProductDetailsComponent = ({ product}) => {
         </div>
       </div>
 
-      <div className='w-full p-4'>
+      <div className='w-full p-4 md:p-15'>
 
 
         <div className=' border-b-2 border-gray-200'>
@@ -65,14 +65,14 @@ const ProductDetailsComponent = ({ product}) => {
           <p className=' mt-3 font-semibold'>R${price}</p>
 
  
-          <div className='w-full flex items-center justify-around mt-3 md:w-max gap-4 text-2xl'> 
-            <button type='button' className='font-medium bg-pink-300 w-full py-2 rounded-lg' onClick={() => onAdd(product, qty)}>
-              Add to Card
+          <div className='w-full flex items-center justify-around mt-3 md:w-max gap-4 text-lg md:text-2xl'> 
+            <button type='button' className='font-medium border border-pink-600 text-pink-600 w-full px-1 py-2 rounded-lg' onClick={() => onAdd(product, qty)}>
+              Adicionar ao carrinho
             </button>
    
           </div>
 
-          <ProductInfo details={details}/>
+          <ProductInfo  details={details}/>
       
       </div>
 

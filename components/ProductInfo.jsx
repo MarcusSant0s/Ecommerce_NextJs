@@ -35,14 +35,14 @@ const ProductInfo = ({details}) => {
 
   return (
     <section>
-      <div className="mt-10 w-full ">
-        <div className="flex flex-col gap-y-12 md:grid md:grid-flow-row md:grid-cols-2 md:gap-8 lg:grid-cols-[0.8fr_1fr]">
+      <div className="mt-10 md:mt-0 md:p-10  ">
+        <div className="flex flex-col gap-y-12 md:grid md:grid-flow-row md:grid-cols-2 md:gap-8 ">
 
           <div>
             {faqs.map((faq, index) => (
               <div
                 key={index}
-                className="flex-col items-stretch justify-start border-b border-gray-200"
+                className=" w-full flex-col items-stretch justify-start border-b border-gray-200"
               >
                 <div
                   className="flex cursor-pointer items-center justify-between px-4 py-4 md:pb-7 md:pt-3"
@@ -63,9 +63,9 @@ const ProductInfo = ({details}) => {
                       <path
                         d="M16 12l-8 8 8 8"
                         stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       />
                     </svg>
                   </div>
