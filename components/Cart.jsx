@@ -9,7 +9,7 @@ import getStripe from '../lib/getStripe';
 
 
 import { AiOutlineMinus, AiOutlinePlus, AiOutlineLeft, AiOutlineRight, AiOutlineShopping } from 'react-icons/ai';
-import { TiDeleteOutline } from 'react-icons/ti'
+import { FaRegTrashAlt } from "react-icons/fa";
 
 
 const Cart = () => {
@@ -47,7 +47,7 @@ const Cart = () => {
 
     <div className='w-full bg-white   flex flex-col md:flex-end md:w-3/4' ref={cartRef} >
       <div className='cart-container'>
-        <button type='button' className='flex mt-5 mb-5 '
+        <button type='button' className='flex mt-5 mb-5  shadow-md shadow-black/20 w-full pb-2'
           onClick={() => setShowCart(false)}>
           <AiOutlineLeft className='text-4xl ml-5'/>
           <span className='self-center text-lg'>Seu carrinho</span>
@@ -107,7 +107,7 @@ const Cart = () => {
                     type='button'
                     className='mr-10'
                     onClick={() => onRemove(item)}>
-                    <TiDeleteOutline  className='text-xl'/>
+                    <FaRegTrashAlt  className='text-2xl'/>
                   </button>
 
                 </div>
@@ -125,7 +125,7 @@ const Cart = () => {
             </div>
             <div className="btn-container">
               <button type='button'
-                className='w-full bg-red-500 max-w-64 py-1 text-2xl font-semibold33                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       '
+                className='mt-4 w-full text-white bg-green-400 max-w-64 py-1 text-2xl font-medium rounded'
                 onClick={handleCheckout}>
                 Pay With Stripe
 

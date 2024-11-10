@@ -20,11 +20,7 @@ const ProductInfo = ({details}) => {
       question: "Descrição",
       answer:details
     },
-    {
-      question: "Material",
-      answer:
-        "Tenetur est rem rerum facilis aspernatur harum sunt. Iusto omnis ut voluptatem neque maiores non ipsa. Non aut nam voluptas exercitationem perferendis natus. Rerum in aut velit aut enim ipsam maxime occaecati architecto. Ut dolor in et nemo dignissimos dolorum voluptates.",
-    },
+
 
   ];
 
@@ -34,18 +30,18 @@ const ProductInfo = ({details}) => {
   };
 
   return (
-    <section>
-      <div className="mt-10 md:mt-0 md:p-10  ">
-        <div className="flex flex-col gap-y-12 md:grid md:grid-flow-row md:grid-cols-2 md:gap-8 ">
+ 
+      <div className="mt-10 md:mt-0 md:p-10 w-full ">
+        <div className="flex flex-col gap-y-12 md:grid   md:gap-8 w-full">
 
-          <div>
+          <div className='w-full'>
             {faqs.map((faq, index) => (
               <div
                 key={index}
                 className=" w-full flex-col items-stretch justify-start border-b border-gray-200"
               >
                 <div
-                  className="flex cursor-pointer items-center justify-between px-4 py-4 md:pb-7 md:pt-3"
+                  className=" w-full flex cursor-pointer items-center justify-between px-4 py-4 md:pb-7 md:pt-3"
                   onClick={() => toggleFaq(index)}
                 >
                   <p className="text-lg font-medium md:text-xl select-none">
@@ -80,7 +76,7 @@ const ProductInfo = ({details}) => {
           </div>
         </div>
       </div>
-    </section>
+ 
   );
 
 

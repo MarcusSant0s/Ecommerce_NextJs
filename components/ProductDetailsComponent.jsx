@@ -7,12 +7,17 @@ import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
 import Image from 'next/image';
 import { useStateContext } from '@/context/StageContext';
 import {ProductInfo } from '@/components';
-import { urlFor } from '@/lib/client';
-
+import { urlFor, client } from '@/lib/client';
 
 const ProductDetailsComponent = ({ product}) => {
 
-  const { image, name, details, price } = product ?? {};
+
+
+  const { image, name, details, price, category } = product ?? {};
+
+
+
+
 
   const [index, setIndex] = useState(0);
   const { decQty, incQty, qty, onAdd, setShowCart } = useStateContext();
@@ -23,19 +28,19 @@ const ProductDetailsComponent = ({ product}) => {
   }
   return (
 
-    <section className='mt-14 w-full  flex flex-col items-center md:flex-row md:mt-20 md:justify-center md:items-start md:px-4'>
+    <section className='mt-14 w-full  flex flex-col items-center md:flex-row md:mt-24 md:justify-center md:items-start md:px-10'>
 
 
 
 
-      <div className='md:max-w-md border-b pb-2'>
+      <div className='md:max-w-2xl border-b pb-2 '>
         <h1 className='text-xl text-gray-400'>
-         Category
+         Category {'>'} {category}
         </h1>
         <Image src={urlFor(image && image[index]).url()} width={400} height={300} alt="product-image" 
-        className='w-full  h-full object-cover'
+        className='w-full  h-full object-cover bg-gray-100 rounded-md '
         priority />
-        <div className="grid grid-cols-4 px-1">
+        <div className="grid grid-cols-4 px-1 mt-2">
           {image?.map((item, i) => (
             <Image
             alt='product-image'
@@ -62,21 +67,25 @@ const ProductDetailsComponent = ({ product}) => {
         </div>
 
 
-          <p className=' mt-3 font-semibold'>R${price}</p>
+          <p className=' mt-3 font-semibold bg-red-300 w-max rounded-lg px-2 py-1'>R${price}</p>
 
  
           <div className='w-full flex items-center justify-around mt-3 md:w-max gap-4 text-lg md:text-2xl'> 
-            <button type='button' className='font-medium border border-pink-600 text-pink-600 w-full px-1 py-2 rounded-lg' onClick={() => onAdd(product, qty)}>
+            <button type='button' className='font-medium border border-pink-600 text-pink-600 w-full px-4 py-2 rounded-lg' onClick={() => onAdd(product, qty)}>
               Adicionar ao carrinho
             </button>
-   
           </div>
 
           <ProductInfo  details={details}/>
       
+
+
+
       </div>
 
 
+
+        
 
     </section>
 
