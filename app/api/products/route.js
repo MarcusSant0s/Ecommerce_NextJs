@@ -11,7 +11,7 @@ export async function GET(req) {
     image, name, slug, discount, price, _id,
     "category": category->category
   }[${start}...${start + limit}]`;
-  
+   
 
   try {
     const products = await client.fetch(query);  

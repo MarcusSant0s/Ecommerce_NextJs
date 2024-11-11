@@ -21,9 +21,7 @@ export default async function page({ params }) {
 
 
 
-  // const productsInfo = chunk(products, limit)
-  // const productPerPage =  productsInfo[page  ]
-  // console.log(params)
+
 
   return (
 
