@@ -13,7 +13,7 @@ const HeroBanner = () => {
    <header className='w-screen   h-screen  relative   '>
 
  
-  <div className=" absolute top-0 md:top-20 left-0  overflow-y-hidden  backdrop-blur-md max-sm:h-full md:w-screen h-screen  bg-gradient-to-b from-pink-400/60 via-red-300/40 to-white ">
+  <div className=" absolute top-0 left-0  overflow-y-hidden  backdrop-blur-md h-full md:w-screen    bg-gradient-to-b from-pink-400/60 via-red-300/40 to-white ">
     <Image
       src={bannerImage2}
       alt="banner-img"
