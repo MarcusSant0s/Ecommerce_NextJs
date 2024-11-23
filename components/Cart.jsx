@@ -118,7 +118,7 @@ const Cart = () => {
           ))}
           
           {cartItems.length >= 1 && (
-          <div className="mt-5 px-2 pb-2">
+          <div key={cartItems._id}className="mt-5 px-2 pb-2">
             <div className="total">
               <h3>Total:</h3>
               <h3>R${totalPrice}</h3>
