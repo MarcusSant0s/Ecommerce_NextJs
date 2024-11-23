@@ -18,6 +18,10 @@ const nextConfig = {
             key: "Access-Control-Allow-Headers",
             value: "Content-Type, Authorization",
           },
+          {
+            key: 'Content-Security-Policy',
+            value: "script-src 'self' https://js.stripe.com; object-src 'none';",
+          },
         ],
       },
     ];
