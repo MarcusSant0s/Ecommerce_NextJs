@@ -41,7 +41,7 @@ export const StateContext = ({ children }) => {
 
         }
 
-        alert(`${qty} ${product.name} added to the card`)
+        console.log(`${qty} ${product.name} added to the card`);
         
     }
 

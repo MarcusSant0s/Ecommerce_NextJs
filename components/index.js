@@ -10,5 +10,5 @@ export {default as ProductDetailsComponent} from "./ProductDetailsComponent";
 export {default as ProductInfo} from "./ProductInfo";
 export {default as ProductsList} from "./ProductsList";
 export {default as FilterProducts} from "./FilterProducts";
-
+export {default as AddCartButton} from "./AddCartButton";
 export {default as BraceletSvg} from './BraceletSvg';

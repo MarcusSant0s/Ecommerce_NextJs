@@ -54,6 +54,12 @@ export default {
         title: 'Quantity',
         type: 'number',
       },
+      {
+        name: 'bathType',
+        title: 'Bath Type',
+        type: 'reference',
+        to: [{ type: 'bathType' }],
+      },
     {
         name: 'subCategories',
         title: 'Sub Categories',
