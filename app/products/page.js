@@ -19,26 +19,32 @@ export default async function page({ params }) {
   // const limit = headersList.get('limit')
   // const page = headersList.get('page')
 
+  const queryTypes = `*[_type == "bathType"] | order(_createdAt desc) {
+    _id,
+    name,
+    description
+  }[0..50]`;
+  
+  let bathTypes = await client.fetch(queryTypes);
+  
 
 
 
 
   return (
-
-    <div className="mt-20">
-      <div className="mx-0 ">
-        <div className="flex  ">
-          <div className={`w-full ps-4  rounded-md flex items-center justify-center bg-gray-100`}>
-            <div className='flex flex-col w-full'>
+ 
+      <div className="md:mx">
+        <div className="flex    ">
+          <div className={`w-full md:ps-4  rounded-md flex items-center justify-center bg-gray-100`}>
+            <div className='flex flex-col w-full px-auto'>
               {/* Sidebar Filters */}
-              <FilterProducts />
+              <FilterProducts initialProducts={products} types={bathTypes}/>
               {/* Product List */}
               <ProductsList FirstProducts={products} />
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </div> 
 
 
   )
