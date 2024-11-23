@@ -35,7 +35,7 @@ const Cart = () => {
     const data = await response.json();
 
 
-    alert('Stripe session created!')
+    console.log('Stripe session created!')
 
 
     stripe.redirectToCheckout({ sessionId: data.id });
@@ -61,7 +61,7 @@ const Cart = () => {
         </button>
 
         {cartItems.length < 1 && (
-          <div className="flex flex-col items-center justify-center p-10 bg-gray-100 rounded-lg shadow-md">
+          <div key={cartItems._id} className="flex flex-col items-center justify-center p-10 bg-gray-100 rounded-lg shadow-md">
             <AiOutlineShopping size={100} className="text-gray-400" />
             <h3 className="mt-4 text-lg font-semibold text-gray-600">Seu carrinho está vazio</h3>
             <p className="text-sm  text-gray-500">Vamos continuar juntos? Tem mais coisas lindas esperando por você! 🛍️</p>
