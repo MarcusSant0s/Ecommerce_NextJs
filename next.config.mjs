@@ -4,6 +4,13 @@ const nextConfig = {
   async headers() {
     return [
       {
+        source: '/:path*',
+        headers: [
+          {
+            key: 'Content-Security-Policy',
+            value: "script-src 'self' https://js.stripe.com; object-src 'none';",
+          },
+        ],
         source: "/api/:path*",
         headers: [
           {
@@ -18,11 +25,9 @@ const nextConfig = {
             key: "Access-Control-Allow-Headers",
             value: "Content-Type, Authorization",
           },
-          {
-            key: 'Content-Security-Policy',
-            value: "script-src 'self' https://js.stripe.com; object-src 'none';",
-          },
+          
         ],
+        
       },
     ];
   },
