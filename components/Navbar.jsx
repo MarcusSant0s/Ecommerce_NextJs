@@ -54,11 +54,11 @@ const Navbar = () => {
           <Link href="/categoria1" className="hover:text-pink-500">
             Peças
           </Link>
-          <Link href="/categoria2" className="hover:text-pink-500">
-            Endereço
+          <Link href='/products' className="hover:text-pink-500">
+          Lojas
           </Link>
-          <Link href="/categoria3" className="hover:text-pink-500">
-            Instagram
+          <Link href="/" className="hover:text-pink-500">
+          Sobre Nós
           </Link>
         </div>
 
@@ -83,14 +83,14 @@ const Navbar = () => {
       {/* Navbar móvel para telas pequenas */}
       <div className="block md:hidden px-4 py-2 bg-white border-t border-gray-200">
         <div className="flex justify-around text-gray-600 font-medium">
-          <Link href="/categoria1" className="hover:text-pink-500">
+        <Link href="/categoria1" className="hover:text-pink-500">
             Peças
           </Link>
-          <Link href="/categoria2" className="hover:text-pink-500">
-            Lojas
+          <Link href='/products' className="hover:text-pink-500">
+          Lojas
           </Link>
-          <Link href="/categoria3" className="hover:text-pink-500">
-            Sobre Nós
+          <Link href="/" className="hover:text-pink-500">
+          Sobre Nós
           </Link>
         </div>
       </div>
