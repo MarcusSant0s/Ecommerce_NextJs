@@ -7,12 +7,7 @@ const nextConfig = {
         headers: [
           {
             key: 'Content-Security-Policy',
-            value: `
-              script-src 'self' https://js.stripe.com https://www.stripe.com;
-              connect-src 'self' https://js.stripe.com https://api.stripe.com;
-              object-src 'none';
-              frame-src https://checkout.stripe.com;
-            `,
+            value:"script-src 'self' https://js.stripe.com https://www.stripe.com; connect-src 'self' https://js.stripe.com https://api.stripe.com; object-src 'none'; frame-src https://checkout.stripe.com;",
           },
         ],
       },
