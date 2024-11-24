@@ -7,7 +7,14 @@ const nextConfig = {
         headers: [
           {
             key: 'Content-Security-Policy',
-            value:"script-src 'self' https://js.stripe.com https://www.stripe.com; connect-src 'self' https://js.stripe.com https://api.stripe.com; object-src 'none'; frame-src https://checkout.stripe.com;",
+            value: `
+              default-src 'self';
+              script-src 'self' https://js.stripe.com https://www.stripe.com https://cdn.sanity.io;
+              connect-src 'self' https://api.stripe.com https://5i8cnr9i.apicdn.sanity.io;
+              object-src 'none';
+              frame-src 'self' https://checkout.stripe.com;
+              img-src 'self' https://cdn.sanity.io data:;
+            `.replace(/\s{2,}/g, ' '), // Minify CSP
           },
         ],
       },
@@ -16,7 +23,7 @@ const nextConfig = {
         headers: [
           {
             key: "Access-Control-Allow-Origin",
-            value: "https://5i8cnr9i.apicdn.sanity.io", // Defina o domínio específico
+            value: "*", // Allow all origins for simplicity
           },
           {
             key: "Access-Control-Allow-Methods",
