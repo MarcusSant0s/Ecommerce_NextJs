@@ -35,7 +35,7 @@ export default async function page({ params }) {
  
       <div className="md:mx">
         <div className="flex    ">
-          <div className={`w-full md:ps-4  rounded-md flex items-center justify-center bg-gray-100`}>
+          <div className="w-full md:ps-4  rounded-md flex items-center justify-center bg-gray-100">
             <div className='flex flex-col w-full px-auto'>
               {/* Sidebar Filters */}
               <FilterProducts initialProducts={products} types={bathTypes}/>

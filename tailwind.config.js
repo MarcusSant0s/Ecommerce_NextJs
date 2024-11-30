@@ -23,6 +23,7 @@ module.exports = {
       },
       colors: {
         'extends-black':'#110E09',
+        'logo-color':'#CEACA9',
       },
     },
   },

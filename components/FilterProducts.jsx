@@ -17,7 +17,7 @@ const FilterProducts = ({ types }) => {
   };
 
   return (
-    <div style={{ width: 'calc(100vw - 3vw)' }} className="p-4 lg:mt-10 bg-white shadow-md rounded-md">
+    <div className=" mt-32 md:mt-24 lg:mt-20 p-4  bg-white shadow-md rounded-md">
       {/* Header */}
       <div className="flex justify-between items-center py-4 border-b border-gray-200">
         <button onClick={onHandlerShowFilter} className="flex items-center text-xl font-semibold text-gray-700 cursor-pointer gap-2 hover:text-pink-700">

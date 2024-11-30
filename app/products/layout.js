@@ -1,10 +1,12 @@
-import React from 'react'
-
-import { Footer } from '@/components'
+import React from 'react' 
+import { Footer, Navbar } from '@/components'
 
 const layout = ({children}) => {
   return (
     <div>
+      <Navbar />
+
+ 
       {children}
 
 

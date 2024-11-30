@@ -3,8 +3,8 @@ import { BsFillPeopleFill } from "react-icons/bs";
 import { MdPhoneInTalk } from "react-icons/md";
 
 const PayWays = () => {
-  return (
-    <section className='w-screen bg-red-400 flex flex-col font-bold gap-10 py-4 justify-evenly text-white '>
+  return ( 
+    <section className='w-screen bg-logo-color flex flex-col font-bold gap-10 py-4 justify-evenly text-white '>
       
       <div className='flex flex-col font-2xl text-center w-64 mx-auto'>
         <MdPhoneInTalk className='text-4xl mx-auto' />

@@ -1,46 +1,19 @@
-'use client';
+ 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import { FaShoppingCart } from 'react-icons/fa';
 import { useStateContext } from '@/context/StageContext';
 import { Cart } from './';
 import Icon from './Icon';
 
-const Navbar = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isAnimating, setIsAnimating] = useState(false);
+const Navbar = () => { 
 
   const { showCart, setShowCart, totalQuantities } = useStateContext();
-
-  // Detectar rolagem
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  // Animação do carrinho
-  useEffect(() => {
-    if (totalQuantities > 0) {
-      setIsAnimating(true);
-
-      const timer = setTimeout(() => {
-        setIsAnimating(false);
-      }, 500); // Duração da animação
-
-      return () => clearTimeout(timer);
-    }
-  }, [totalQuantities]);
-
+ 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-50 bg-white shadow-md transition-transform duration-500 ease-in-out ${
-        isScrolled ? 'translate-y-0' : '-translate-y-full'
-      }`}
+      className="fixed top-0 left-0 w-full z-50 bg-white shadow-md transition-transform duration-500 ease-in-out"
     >
       <div className="flex items-center justify-between px-4 py-2 md:px-8">
         {/* Logo */}
@@ -66,9 +39,7 @@ const Navbar = () => {
         <div className="flex items-center gap-4">
           <button
             onClick={() => setShowCart(!showCart)}
-            className={`relative text-2xl text-pink-600 hover:text-pink-500 ${
-              isAnimating ? 'animate-bounce-scale' : ''
-            }`}
+            className="relative text-2xl text-pink-600 hover:text-pink-500" 
           >
             <FaShoppingCart />
             {totalQuantities > 0 && (

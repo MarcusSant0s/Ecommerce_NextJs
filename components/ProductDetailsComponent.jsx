@@ -12,7 +12,7 @@ const ProductDetailsComponent = ({ product }) => {
 
   return (
     <section className="mt-4 w-full flex flex-col items-center md:flex-row md:mt-24 md:justify-center md:items-start md:px-10">
-      <div className="md:max-w-2xl border-b pb-2">
+      <div className="max-sm:mt-28 md:max-w-2xl border-b pb-2">
         <h1 className="text-xl text-gray-400">
           Category {'>'} {category}
         </h1>

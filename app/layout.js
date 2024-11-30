@@ -1,18 +1,12 @@
  
 import "./globals.css";
-import {Navbar} from "@/components";
 import {StateContext} from '@/context/StageContext'
 
 
 
 
 import {  lora } from './font';
-
  
- 
- 
-
-
 
 export const metadata = {
   title: "Create Next App",
@@ -21,13 +15,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html className="w-screen " lang="en">
+    <html lang="en">
       <body className={lora.className}>
       <StateContext  >
-        <Navbar/>
-
         {children}
-        </StateContext  >
+        </StateContext>
         </body>
     </html>
   );
