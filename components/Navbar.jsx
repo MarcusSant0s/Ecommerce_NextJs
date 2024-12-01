@@ -23,16 +23,13 @@ const Navbar = () => {
         </Link>
 
         {/* Categorias */}
-        <div className="hidden md:flex items-center gap-6 text-gray-600 font-medium">
+        <div className="hidden md:flex items-center gap-6 text-gray-600 font-medium text-xl">
           <Link href="/products" className="hover:text-pink-500">
             Peças
           </Link>
-          <Link href='/' className="hover:text-pink-500">
+          <Link href='https://www.google.com/maps/place/R.+Sete+de+Setembro,+127+-+01+-+Centro,+Ca%C3%A7apava+-+SP,+12281-620/data=!4m2!3m1!1s0x94cc51708a515071:0x39aa5670174c3422?sa=X&ved=1t:242&hl=en&ictx=111' className="hover:text-pink-500">
           Lojas
-          </Link>
-          <Link href="/" className="hover:text-pink-500">
-          Sobre Nós
-          </Link>
+          </Link> 
         </div>
 
         {/* Carrinho */}
@@ -54,15 +51,12 @@ const Navbar = () => {
       {/* Navbar móvel para telas pequenas */}
       <div className="block md:hidden px-4 py-2 bg-white border-t border-gray-200">
         <div className="flex justify-around text-gray-600 font-medium">
-        <Link href="/products" className="hover:text-pink-500">
+        <Link href="/products" className="hover:text-pink-500 ">
             Peças
           </Link>
-          <Link href='/' className="hover:text-pink-500">
+          <Link href='https://www.google.com/maps/place/R.+Sete+de+Setembro,+127+-+01+-+Centro,+Ca%C3%A7apava+-+SP,+12281-620/data=!4m2!3m1!1s0x94cc51708a515071:0x39aa5670174c3422?sa=X&ved=1t:242&hl=en&ictx=111' className="hover:text-pink-500">
           Lojas
-          </Link>
-          <Link href="/" className="hover:text-pink-500">
-          Sobre Nós
-          </Link>
+          </Link> 
         </div>
       </div>
 
