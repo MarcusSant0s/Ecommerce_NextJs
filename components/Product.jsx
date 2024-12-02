@@ -7,6 +7,7 @@ import Image from 'next/image';
 const Product = ({ product }) => {
   const { name, slug, price, category, image} = product ?? {}
   console.log(product)
+  if(!name || !slug || !price || !category || !image) return
   return (
     <div className='group mx-1 p-2 max-h-96   bg-white border hover:border-black rounded-lg shadow-md drop-shadow-md'>
       <Link href={`products/${slug.current}`}>
