@@ -18,7 +18,10 @@ const ProductDetails = async ({params}) =>  {
  
     let product = await client.fetch(query); 
     
- 
+
+    if (!product) {
+      console.warn(`Produto com slug ${params.slug} não foi encontrado.`);
+    }
 
 
   return  (<>
