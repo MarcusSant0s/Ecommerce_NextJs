@@ -10,7 +10,7 @@ import PayWays from '@/components/PayWays'
 
 const ProductDetails = async ({params}) =>  {
 
-  if (!params.slug) {
+  if (params.slug == undefined) {
     console.warn(`Produto com slug encontrado.`);
   }
 
