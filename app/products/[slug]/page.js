@@ -10,6 +10,10 @@ import PayWays from '@/components/PayWays'
 
 const ProductDetails = async ({params}) =>  {
 
+  if (!params.slug) {
+    console.warn(`Produto com slug encontrado.`);
+  }
+
   const query = `*[_type == "product" && slug.current == '${params.slug}']{
       image, name, slug, discont, price, _id,
       "category": category -> category
@@ -19,9 +23,7 @@ const ProductDetails = async ({params}) =>  {
     let product = await client.fetch(query); 
     
 
-    if (!product) {
-      console.warn(`Produto com slug ${params.slug} não foi encontrado.`);
-    }
+ 
 
 
   return  (<>
