@@ -4,7 +4,7 @@ import { MdPhoneInTalk } from "react-icons/md";
 
 const PayWays = () => {
   return ( 
-    <section className='w-screen bg-logo-color flex flex-col font-bold gap-10 py-4 justify-evenly text-white '>
+    <section className='w-screen bg-logo-color flex flex-col font-bold gap-10 py-4 justify-evenly text-white  md:flex-row md:mt-5 '>
       
       <div className='flex flex-col font-2xl text-center w-64 mx-auto'>
         <MdPhoneInTalk className='text-4xl mx-auto' />

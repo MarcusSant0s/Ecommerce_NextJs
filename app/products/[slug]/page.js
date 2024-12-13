@@ -14,8 +14,14 @@ const ProductDetails = async ({params}) =>  {
     console.warn(`Produto com slug encontrado.`);
   }
 
-  const query = `*[_type == "product" && slug.current == '${params.slug}']{
-      image, name, slug, discont, price, _id,
+  const query = `*[_type == "product"  && Quantity > 0 && slug.current == '${params.slug}']{
+      image,
+      name,
+      slug,
+      discont,
+      price,
+      _id,
+      Quantity,
       "category": category -> category
   }[0]`;  
   

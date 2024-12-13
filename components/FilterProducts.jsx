@@ -1,95 +1,80 @@
-'use client'
+'use client';
 
-import { useState } from 'react';
-import { useRouter } from 'next/navigation'; // Importação correta
-import Link from 'next/link';
-import { FaChevronDown } from "react-icons/fa";
+import { useState } from "react";
 
-const FilterProducts = ({ types }) => {
-  const router = useRouter();
-  const [showFilter, setShowFilter] = useState(true);
+const Filters = ({ onChange }) => {
+  const [category, setCategory] = useState('');
+  const [minPrice, setMinPrice] = useState('');
+  const [maxPrice, setMaxPrice] = useState('');
 
-  const onHandlerShowFilter = () => setShowFilter(!showFilter);
-
-  const handleClearFilters = () => {
-    // Limpar os filtros: redefinir os parâmetros de consulta
-    router.push('/'); // Redireciona para a página inicial
-  };
-
-  // Exemplo de manipulação de query string
-  const handleFilterCategory = (category) => {
-    router.push({
-      pathname: '/', // Caminho
-      query: { categoryParam: category }, // Parâmetros de consulta
+  const applyFilters = () => {
+    onChange({
+      category,
+      minPrice: minPrice || '0',
+      maxPrice: maxPrice || 'Infinity',
     });
   };
 
   return (
-    <div className="mt-32 md:mt-24 lg:mt-20 p-4 bg-white shadow-md rounded-md">
-      {/* Header */}
-      <div className="flex justify-between items-center py-4 border-b border-gray-200">
-        <button
-          onClick={onHandlerShowFilter}
-          className="flex items-center text-xl font-semibold text-gray-700 cursor-pointer gap-2 hover:text-pink-700"
-          aria-label="Alternar filtros"
+    <div className="flex flex-col md:flex-row gap-4 items-center bg-gray-100 p-4 rounded-lg shadow-md mt-16 justify-center ">
+      {/* Filtro por Categoria */}
+      <div className="flex flex-col w-full md:w-auto">
+        <label htmlFor="category" className="text-sm font-medium text-gray-700 mb-1">
+          Categoria
+        </label>
+        <select
+          id="category"
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
+          className="w-full md:w-48 p-2 border rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
         >
-          <span>Filtros</span>
-          <FaChevronDown className={`transition-transform duration-500 ${showFilter ? 'rotate-180' : ''}`} />
-        </button>
-
-        <button
-          onClick={handleClearFilters}
-          className="text-sm text-gray-500 hover:text-pink-700"
-          aria-label="Limpar filtros"
-        >
-          Limpar filtros
-        </button>
+          <option value="">Todas as Categorias</option>
+          <option value="Brinco">Brinco</option>
+          <option value="Colar">Colar</option>
+          <option value="Pulseira">Pulseira</option>
+          {/* Outras opções */}
+        </select>
       </div>
 
-      {/* Filters */}
-      <div className={`${showFilter ? 'hidden' : ''} pr-2`}>
-        {/* Search Filter */}
-        <div className="flex w-full mb-6 md:mb-10 px-2 md:px-6 items-center border bg-gray-50 border-gray-300 rounded-md">
-          <input
-            type="text" 
-            placeholder="Pesquisar..."
-            className="py-2 w-full text-sm md:text-base rounded-md placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-pink-700"
-          />
-        </div>
+      {/* Filtro por Preço Mínimo */}
+      {/* <div className="flex flex-col w-full md:w-auto">
+        <label htmlFor="minPrice" className="text-sm font-medium text-gray-700 mb-1">
+          Preço Mínimo
+        </label>
+        <input
+          type="number"
+          id="minPrice"
+          placeholder="0"
+          value={minPrice}
+          onChange={(e) => setMinPrice(e.target.value)}
+          className="w-full md:w-32 p-2 border rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
+        />
+      </div> */}
 
-        {/* Categories Filter */}
-        <div className="pb-3 md:pb-6 border-b border-gray-100 mb-6">
-          <p className="font-bold text-gray-700 mb-4">Categoria</p>
-          <div className="flex flex-wrap gap-2">
-            {['Pulseira', 'Brinco', 'Anel'].map((category) => (
-              <button
-                key={category}
-                onClick={() => handleFilterCategory(category)}
-                className="p-2 text-sm md:text-base font-semibold text-gray-700 rounded-md bg-white border border-gray-300 hover:bg-pink-700 hover:text-white"
-              >
-                {category}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* Filter by Bath Type */}
-        <div className="pb-3 md:pb-6 border-b border-gray-100 mb-6">
-          <p className="font-bold text-gray-700 mb-4">Tipo de Banho</p>
-          <select
-            className="form-select w-full sm:w-auto border border-gray-300 rounded-md p-2 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-pink-700"
-          >
-            <option value="">Todos</option>
-            {types.map((bathType) => (
-              <option key={bathType._id} value={bathType._id}>
-                {bathType.name}
-              </option>
-            ))}
-          </select>
-        </div>
+      {/* Filtro por Preço Máximo */}
+      <div className="flex flex-col w-full md:w-auto">
+        <label htmlFor="maxPrice" className="text-sm font-medium text-gray-700 mb-1">
+          Valor Máximo
+        </label>
+        <input
+          type="number"
+          id="maxPrice"
+          placeholder="∞"
+          value={maxPrice}
+          onChange={(e) => setMaxPrice(e.target.value)}
+          className="w-full md:w-32 p-2 border rounded-md focus:ring-2  focus:outline-none"
+        />
       </div>
+
+      {/* Botão de Aplicar Filtros */}
+      <button
+        onClick={applyFilters}
+        className="bg-logo-color  text-white text-bold px-4 py-2 rounded-md font-semibold hover:shadow-md focus:outline-none focus:ring-2  transition duration-200"
+      >
+        Aplicar Filtros
+      </button>
     </div>
   );
 };
 
-export default FilterProducts;
+export default Filters;
