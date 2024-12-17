@@ -4,8 +4,8 @@ const nextConfig = {
   async headers() {
     const ContentSecurityPolicy = `
       default-src 'self'; 
-      script-src 'self' 'unsafe-eval' https://js.stripe.com https://www.stripe.com https://cdn.sanity.io 'unsafe-inline' https://www.google-analytics.com/analytics.js; 
-      connect-src 'self' https://api.stripe.com https://5i8cnr9i.apicdn.sanity.io;
+      script-src 'self' 'unsafe-eval' https://js.stripe.com https://www.stripe.com https://cdn.sanity.io https://5i8cnr9i.api.sanity.io/v2022-03-07/ 'unsafe-inline' https://www.google-analytics.com/analytics.js; 
+      connect-src 'self' https://api.stripe.com https://5i8cnr9i.apicdn.sanity.io https://5i8cnr9i.api.sanity.io/v2022-03-07/;
       object-src 'none';
       frame-src 'self' https://checkout.stripe.com;
       img-src 'self' https://cdn.sanity.io data:;
@@ -26,10 +26,6 @@ const nextConfig = {
       {
         source: '/api/:path*',
         headers: [
-          {
-            key: 'Access-Control-Allow-Origin',
-            value: 'https://example.com', // Substitua por domínios confiáveis
-          },
           {
             key: 'Access-Control-Allow-Methods',
             value: 'GET, POST, PUT, DELETE, OPTIONS',

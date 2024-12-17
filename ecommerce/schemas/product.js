@@ -16,7 +16,7 @@ export default {
       },
       { 
         name: 'name',
-        title: 'Name',
+        title: 'Nome',
         type: 'string',
       },
       { 
@@ -30,33 +30,38 @@ export default {
       },
       { 
         name: 'discont',
-        title: 'Discont',
+        title: 'Desconto',
         type: 'number',
       },
       { 
         name: 'price',
-        title: 'Price',
+        title: 'Preço',
         type: 'number',
       },
       { 
         name: 'details',
-        title: 'Details',
+        title: 'Detalhes',
+        type: 'string',
+      },
+      { 
+        name: 'measures',
+        title: 'Medidas',
         type: 'string',
       },
       {
         name: 'category',
-        title: 'Category',
+        title: 'Categoria',
         type: 'reference',
         to: [{type: 'category' }],
       },
       {
         name: 'Quantity',
-        title: 'Quantity',
+        title: 'Quantidade',
         type: 'number',
       },
       {
         name: 'bathType',
-        title: 'Bath Type',
+        title: 'Tipo banho',
         type: 'reference',
         to: [{ type: 'bathType' }],
       },
