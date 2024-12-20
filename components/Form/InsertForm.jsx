@@ -34,21 +34,29 @@ import ProductAdmin from '../ProductAdmin'
       alert(`${message}: ${error.message}`);
     };
 
-      const fetchData = async () => {
-        try {
-          const [categoryData, subCategoryData, bathTypeData] = await Promise.all([
-            client.fetch(`*[_type == "category"]`),
-            client.fetch(`*[_type == "subCategories"]`),
-            client.fetch(`*[_type == "bathType"]`),
-          ]);
-
+    const fetchData = () => {
+      client.fetch(`*[_type == "category"]`)
+        .then((categoryData) => {
+          console.log("Categoria:", categoryData);
           setCategories(categoryData.map((cat) => ({ id: cat._id, title: cat.category })));
+    
+          return client.fetch(`*[_type == "subCategories"]`);
+        })
+        .then((subCategoryData) => {
+          console.log("Subcategoria:", subCategoryData);
           setSubCategories(subCategoryData.map((subCat) => ({ id: subCat._id, title: subCat.subCategories })));
+    
+          return client.fetch(`*[_type == "bathType"]`);
+        })
+        .then((bathTypeData) => {
+          console.log("Tipo de Banho:", bathTypeData);
           setBathTypes(bathTypeData.map((bath) => ({ id: bath._id, title: bath.name })));
-        } catch (error) {
+        })
+        .catch((error) => {
           handleError(error, "Erro ao buscar dados de categorias, subcategorias ou tipos de banho");
-        }
-      };
+        });
+    };
+    
 
     const fetchProducts = async () => {
       try {

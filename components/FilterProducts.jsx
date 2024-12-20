@@ -30,20 +30,22 @@ const Filters = ({ onChange }) => {
 
   const fetchData = async () => {
     try {
-      const [categoryData, subCategoryData, bathTypeData] = await Promise.all([
-        client.fetch(`*[_type == "category"]`),
-        client.fetch(`*[_type == "subCategories"]`),
-        client.fetch(`*[_type == "bathType"]`),
-      ]);
-
+      const categoryData = await client.fetch(`*[_type == "category"]`);
+      console.log("Categoria:", categoryData);
       setCategories(categoryData.map((cat) => ({ id: cat._id, title: cat.category })));
+  
+      const subCategoryData = await client.fetch(`*[_type == "subCategories"]`);
+      console.log("Subcategoria:", subCategoryData);
       setSubCategories(subCategoryData.map((subCat) => ({ id: subCat._id, title: subCat.subCategories })));
+  
+      const bathTypeData = await client.fetch(`*[_type == "bathType"]`);
+      console.log("Tipo de Banho:", bathTypeData);
       setBathTypes(bathTypeData.map((bath) => ({ id: bath._id, title: bath.name })));
     } catch (error) {
-      console.error('Erro ao buscar dados:', error);
+      console.error("Erro ao buscar dados:", error);
     }
   };
-
+  
   useEffect(() => {
     fetchData();
   }, []);
