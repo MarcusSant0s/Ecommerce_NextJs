@@ -34,21 +34,21 @@ import ProductAdmin from '../ProductAdmin'
       alert(`${message}: ${error.message}`);
     };
 
-    const fetchData = async () => {
-      try {
-        const [categoryData, subCategoryData, bathTypeData] = await Promise.all([
-          client.fetch(`*[_type == "category"]`),
-          client.fetch(`*[_type == "subCategories"]`),
-          client.fetch(`*[_type == "bathType"]`),
-        ]);
+      const fetchData = async () => {
+        try {
+          const [categoryData, subCategoryData, bathTypeData] = await Promise.all([
+            client.fetch(`*[_type == "category"]`),
+            client.fetch(`*[_type == "subCategories"]`),
+            client.fetch(`*[_type == "bathType"]`),
+          ]);
 
-        setCategories(categoryData.map((cat) => ({ id: cat._id, title: cat.category })));
-        setSubCategories(subCategoryData.map((subCat) => ({ id: subCat._id, title: subCat.subCategories })));
-        setBathTypes(bathTypeData.map((bath) => ({ id: bath._id, title: bath.name })));
-      } catch (error) {
-        handleError(error, "Erro ao buscar dados de categorias, subcategorias ou tipos de banho");
-      }
-    };
+          setCategories(categoryData.map((cat) => ({ id: cat._id, title: cat.category })));
+          setSubCategories(subCategoryData.map((subCat) => ({ id: subCat._id, title: subCat.subCategories })));
+          setBathTypes(bathTypeData.map((bath) => ({ id: bath._id, title: bath.name })));
+        } catch (error) {
+          handleError(error, "Erro ao buscar dados de categorias, subcategorias ou tipos de banho");
+        }
+      };
 
     const fetchProducts = async () => {
       try {

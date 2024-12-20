@@ -55,7 +55,7 @@ const Navbar = () => {
             Peças
           </Link>
           <Link href='https://www.google.com/maps/place/R.+Sete+de+Setembro,+127+-+01+-+Centro,+Ca%C3%A7apava+-+SP,+12281-620/data=!4m2!3m1!1s0x94cc51708a515071:0x39aa5670174c3422?sa=X&ved=1t:242&hl=en&ictx=111' className="hover:text-pink-500">
-          Lojas
+          Loja
           </Link> 
         </div>
       </div>

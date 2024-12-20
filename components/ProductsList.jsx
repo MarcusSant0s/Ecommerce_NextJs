@@ -10,8 +10,11 @@ const ProductsList = ({ FirstProducts }) => {
   const [loading, setLoading] = useState(false);
   const [filters, setFilters] = useState({
     category: '',
+    subCategory: '',
     minPrice: 0,
     maxPrice: Infinity,
+    bathType:'',
+
   });
   const limit = 20;
 
@@ -21,11 +24,17 @@ const ProductsList = ({ FirstProducts }) => {
       const query = new URLSearchParams({
         start: reset ? '0' : start.toString(),
         limit: limit.toString(),
-        ...filters,
+        ...(filters.category != '' && { category: filters.category }), // Evita categoria vazia
+        ...(filters.minPrice > 0 && { minPrice: filters.minPrice.toString() }), // Evita minPrice 0
+        ...(filters.maxPrice == Infinity ? null : filters.maxPrice.toString()), // Evita maxPrice Infinity
+        ...(filters.bathType != '' && { bathType: filters.bathType }), // Evita bathType vazio
+        ...(filters.subCategory.length > 0 && { subCategory: filters.subCategory.join(',') }), // Evita subcategorias vazias
       });
+  
       const response = await fetch(`/api/products?${query.toString()}`);
+      console.log(`api/products?${query.toString()}`)
       const newProducts = await response.json();
-
+  
       setProducts(reset ? newProducts : [...products, ...newProducts]);
       setStart(reset ? limit : start + limit);
     } catch (error) {
@@ -34,6 +43,7 @@ const ProductsList = ({ FirstProducts }) => {
       setLoading(false);
     }
   };
+  
 
   const handleFilterChange = (newFilters) => {
     setFilters(newFilters);
